@@ -1,0 +1,102 @@
+﻿<Page x:Class="Gui.view.Pages.GameRoom"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Gui.view.Pages"
+      xmlns:userControls="clr-namespace:Gui.view.UserControls"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="GameRoom">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="..\..\Images\back_img.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <Grid Background="#80000000" Visibility="Collapsed" x:Name="DimmingPanel"/>
+        <Grid Height="40" Width="110" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0"  Grid.Column="1" Grid.Row="2"  MouseDown="BackBTN_Click" RenderTransformOrigin="0.515,1.059">
+            <userControls:TriviaBox Placeholder="&lt;-" BoxWidth="110" MainColor="#009999" SecondaryColor="#00b3b3" 
+                                        OnChnageColor="#008080" HorizontalBorderWidth="2"/>
+        </Grid>
+
+        <Grid x:Name="TimerBox" Height="80" Width="80" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,20,20,0" RenderTransformOrigin="0.515,1.059">
+            <userControls:ProgressBar x:Name="circularProgressBar" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="TimerTXT" Text="time" Foreground="white" VerticalAlignment="Center" 
+                       HorizontalAlignment="Center" FontSize="25" TextAlignment="Center"></TextBlock>
+        </Grid>
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="1200" MaxHeight="800">
+            <Viewbox Stretch="Uniform">
+                <Grid Width="800" Height="450">
+                    <Grid Width="600" Height="300" x:Name="MainGameBox">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.4*"/>
+                            <RowDefinition Height="0.6*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                            <Grid Height="40" Margin="5, 10, 5, 40"  Grid.Row="0">
+                                <userControls:TriviaBox x:Name="TriviaBoxQuestion"  Placeholder="Question" 
+                                    BoxWidth="600" MainColor="#334d4d" SecondaryColor="#293d3d"  
+                                    OnChnageColor="#334d4d" HorizontalBorderWidth="2"/>
+                            </Grid>
+                            <Grid Height="80" Margin="0, 0, 0, 0"  Grid.Row="0">
+                                <userControls:QuestionBox x:Name="BigTriviaBoxQuestion" UpperText="Questionlong" 
+                    BoxWidth="600" MainColor="#334d4d" SecondaryColor="#293d3d"  
+                    OnChnageColor="#334d4d" HorizontalBorderWidth="2" Visibility="Collapsed"/>
+                            </Grid>
+                        </Grid>
+
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0" Grid.Column="0">
+
+                                <Grid Height="40" Width="290" Margin="0,0,10,0"  Grid.Column="1" MouseDown="Ans1_Click">
+                                    <userControls:TriviaBox Placeholder="Ans1"  BoxWidth="290" MainColor="#ff0000" SecondaryColor="#ff4d4d"
+                    OnChnageColor="#660000" HorizontalBorderWidth="2" x:Name="Ans1BTN"/>
+                                </Grid>
+                            </Grid>
+
+                            <Grid Grid.Row="0" Grid.Column="1">
+                                <Grid Height="40" Width="290" Margin="10,0,0,0"  Grid.Column="1" MouseDown="Ans2_Click">
+                                    <userControls:TriviaBox Placeholder="Ans2"  BoxWidth="290" MainColor="#0066ff" SecondaryColor="#3385ff"
+                    OnChnageColor="#002db3" HorizontalBorderWidth="2" x:Name="Ans2BTN"/>
+                                </Grid>
+                            </Grid>
+
+                            <Grid Grid.Row="1" Grid.Column="0">
+                                <Grid Height="40" Width="290" Margin="0,0,10,0"  Grid.Column="1" MouseDown="Ans3_Click">
+                                    <userControls:TriviaBox Placeholder="Ans3"  BoxWidth="290" MainColor="#33cc33" SecondaryColor="#5cd65c"
+                    OnChnageColor="#2eb82e" HorizontalBorderWidth="2"  x:Name="Ans3BTN"/>
+                                </Grid>
+                            </Grid>
+
+                            <Grid Grid.Row="1" Grid.Column="1">
+                                <Grid Height="40" Width="290" Margin="10,0,0,0"  Grid.Column="1" MouseDown="Ans4_Click">
+                                    <userControls:TriviaBox Placeholder="Ans4"  BoxWidth="290" MainColor="#cccc00" SecondaryColor="#ffff1a"
+                    OnChnageColor="#b3b300" HorizontalBorderWidth="2"  x:Name="Ans4BTN"/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+                    <Grid Width="600" Height="300" x:Name="MainMessageBox" Visibility="Collapsed">
+                        <TextBlock x:Name="MainMessageText" Text="Waiting for the Game to start!" FontSize="40" Foreground="White" 
+       VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Grid>
+                </Grid>
+            </Viewbox>
+        </Grid>
+
+    </Grid>
+</Page>

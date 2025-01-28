@@ -1,0 +1,99 @@
+﻿<Page x:Class="Gui.view.Pages.SignUp"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Gui.view.Pages"
+      xmlns:userControls="clr-namespace:Gui.view.UserControls"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SignUp">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="..\..\Images\back_img.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+
+        <Grid Height="40" Width="110" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0"  Grid.Column="1" Grid.Row="2"  MouseDown="BackBTN_Click" RenderTransformOrigin="0.515,1.059">
+            <userControls:TriviaBox Placeholder="&lt;-" BoxWidth="110" MainColor="#009999" SecondaryColor="#00b3b3" 
+                                        OnChnageColor="#008080" HorizontalBorderWidth="2"/>
+        </Grid>
+
+        <TextBlock Text="Sign up" 
+                   FontWeight="Bold"
+           HorizontalAlignment="Center" 
+           VerticalAlignment="Top" 
+           Foreground="Black" 
+           FontSize="40" Margin="0,25,0,0"/>
+        
+        <Grid Width="700" Height="320" Margin="50,97,50,33">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="240"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+
+                <Grid Height="40" Margin="5, 10, 5, 10"  Grid.Row="0">
+                    <userControls:ClearableTextBox x:Name="clearableTextBoxUsername"  Placeholder="User Name" BoxWidth="340"/>
+                </Grid>
+
+                <Grid Height="40" Margin="5, 10, 5, 10"   Grid.Row="1">
+                    <userControls:ClearableTextBox x:Name="clearableTextBoxPassword"  Placeholder="Password" BoxWidth="340"/>
+                </Grid>
+
+                <Grid Height="40" Margin="5, 10, 5, 10"   Grid.Row="2">
+                    <userControls:ClearableTextBox x:Name="secondClearableTextBoxPassword"  Placeholder="Repeat password" BoxWidth="340"/>
+                </Grid>
+
+                <Grid Height="40" Margin="5, 10, 5, 10"   Grid.Row="3">
+                    <userControls:ClearableTextBox x:Name="clearableTextBoxEmail"  Placeholder="Email" BoxWidth="340"/>
+                </Grid>
+
+
+                <Grid Height="40" Margin="5, 10, 5, 10"  Grid.Column="1" Grid.Row="0">
+                    <userControls:ClearableTextBox x:Name="clearableTextBoxPhone"  Placeholder="Phone number" BoxWidth="340"/>
+                </Grid>
+
+                <Grid Height="40" Margin="5, 10, 5, 10"  Grid.Column="1" Grid.Row="1">
+                    <userControls:ClearableTextBox x:Name="clearableTextBoxBirth"  Placeholder="Birthday" BoxWidth="340"/>
+                </Grid>
+
+                <Grid Height="40" Margin="5, 10, 5, 10"  Grid.Column="1" Grid.Row="2">
+                    <userControls:ClearableTextBox x:Name="clearableTextBoxCity"  Placeholder="City" BoxWidth="340"/>
+                </Grid>
+
+                <Grid Height="40" Grid.Column="1" Grid.Row="3" Margin="5, 10, 5, 10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="140"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Height="40" Grid.Column="0" Margin="0, 0, 5, 0">
+                        <userControls:ClearableTextBox x:Name="clearableTextBoxStreet" Placeholder="Street" BoxWidth="195"/>
+                    </Grid>
+
+                    <Grid Height="40" Grid.Column="1">
+                        <userControls:ClearableTextBox x:Name="clearableTextBoxApt" Placeholder="Apt" BoxWidth="140"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+            <Grid Height="40" Width="200" Margin="5, 30, 5, 10"  Grid.Column="1" Grid.Row="2"  MouseDown="Grid_MouseDown">
+                <userControls:TriviaBox Placeholder="Sign up" BoxWidth="200" MainColor="#009999" SecondaryColor="#00b3b3" 
+                                        OnChnageColor="#008080" HorizontalBorderWidth="2"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

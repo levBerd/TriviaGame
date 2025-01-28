@@ -1,0 +1,10 @@
+Bonuses:
+
+1. added 1.0.4 regex
+2. added 1.4.1 - add question screen, 1v1 mode
+3. added 1.5.0 - added OTP cryptoAlgorithm on both sever and client
+4. added 1.5.1 - added RSA, AES cryptoAlgorithm on both server and cleint
+5. made screen resizable
+6. made gui top bar (where x and resize buttons) look nicer
+7. made connect screen to other ip's, can be played on a network from multiple computers
+8. added sound

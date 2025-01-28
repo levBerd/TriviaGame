@@ -1,0 +1,73 @@
+﻿<Page x:Class="Gui.view.Pages.CreateRoom"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Gui.view.Pages"
+      xmlns:userControls="clr-namespace:Gui.view.UserControls"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CreateRoom">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="..\..\Images\back_img.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0">
+            <Grid Height="40" Width="110" MouseDown="BackBTN_Click" RenderTransformOrigin="0.515,1.059">
+                <userControls:TriviaBox Placeholder="&lt;-" BoxWidth="110" MainColor="#009999" SecondaryColor="#00b3b3"
+                                        OnChnageColor="#008080" HorizontalBorderWidth="2"/>
+            </Grid>
+        </Grid>
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="1200" MaxHeight="1000">
+            <Viewbox Stretch="Uniform">
+                <Grid Width="800" Height="450">
+                    <TextBlock Text="Create new game room" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Top" 
+                        FontWeight="Bold"
+                        Foreground="Black" 
+                        FontSize="40" Margin="0,22,0,0"/>
+
+                    <Grid Width="600" Height="300" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.30*"/>
+                            <RowDefinition Height="0.2*"/>
+                            <RowDefinition Height="0.5*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Height="40" Width="380" Margin="60, 20, 60, 0" Grid.Row="0">
+                            <userControls:ClearableTextBox x:Name="TextBoxRoomName" Placeholder="Room name" BoxWidth="380"/>
+                        </Grid>
+
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Height="40" Margin="10, 0, 10, 0" Grid.Column="0">
+                                <userControls:ClearableTextBox x:Name="TextBoxRoomPlayers" Placeholder="Max Players" BoxWidth="180"/>
+                            </Grid>
+
+                            <Grid Height="40" Margin="10, 0, 10, 0" Grid.Column="1">
+                                <userControls:ClearableTextBox x:Name="TextBoxRoomTime" Placeholder="Max Time" BoxWidth="180"/>
+                            </Grid>
+
+                            <Grid Height="40" Margin="10, 0, 10, 0" Grid.Column="2">
+                                <userControls:ClearableTextBox x:Name="TextBoxQuestionCount" Placeholder="Questions" BoxWidth="180"/>
+                            </Grid>
+                        </Grid>
+
+                        <Grid Height="40" Width="200" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" MouseDown="CreateRoom_Click">
+                            <userControls:TriviaBox Placeholder="Create room" BoxWidth="200" MainColor="#009999" SecondaryColor="#00b3b3"
+                                                    OnChnageColor="#008080" HorizontalBorderWidth="2" Margin="0,0,0,0"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Viewbox>
+        </Grid>
+    </Grid>
+</Page>

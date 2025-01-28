@@ -1,0 +1,20 @@
+{
+    "files.associations": {
+        ".fantomasignore": "ignore",
+        "array": "cpp",
+        "iterator": "cpp",
+        "list": "cpp",
+        "vector": "cpp",
+        "xhash": "cpp",
+        "xtree": "cpp",
+        "format": "cpp",
+        "initializer_list": "cpp",
+        "ranges": "cpp",
+        "regex": "cpp",
+        "span": "cpp",
+        "utility": "cpp",
+        "valarray": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp"
+    }
+}
